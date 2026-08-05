@@ -60,6 +60,6 @@ module.exports = async function handler(req, res) {
 
     res.status(200).json({ reply: reply.trim() });
   } catch (err) {
-    res.status(502).json({ error: "Could not reach the assistant right now.", debug: err.message });
+    res.status(502).json({ error: "Could not reach the assistant right now." });
   }
 };
