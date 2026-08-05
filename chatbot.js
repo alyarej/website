@@ -30,7 +30,8 @@
 
   function addMessage(text, who) {
     var msg = document.createElement("div");
-    msg.className = "chat-msg chat-msg--" + who;
+    var modifiers = who.split(" ").map(function (w) { return "chat-msg--" + w; });
+    msg.className = ["chat-msg"].concat(modifiers).join(" ");
     msg.textContent = text;
     messages.appendChild(msg);
     messages.scrollTop = messages.scrollHeight;
