@@ -18,6 +18,18 @@ module.exports = async function handler(req, res) {
     return;
   }
 
+  if (req.query && req.query.debugEnv === "1") {
+    res.status(200).json({
+      hasKey: !!process.env.BEDROCK_API_KEY,
+      keyLen: (process.env.BEDROCK_API_KEY || "").length,
+      hasUrl: !!process.env.BEDROCK_API_URL,
+      urlLen: (process.env.BEDROCK_API_URL || "").length,
+      hasModel: !!process.env.BEDROCK_MODEL,
+      modelLen: (process.env.BEDROCK_MODEL || "").length
+    });
+    return;
+  }
+
   const message = req.body && req.body.message;
   if (!message || typeof message !== "string" || !message.trim()) {
     res.status(400).json({ error: "Message is required" });
