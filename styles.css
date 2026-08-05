@@ -1,6 +1,6 @@
 :root {
   --bg: #f8f0e1;
-  --bg-panel: #f0e2c8;
+  --bg-panel: #f8f0e1;
   --ink: #3a241f;
   --ink-muted: #6f5647;
   --ink-faint: #8f7660;
@@ -208,21 +208,6 @@ h1.name em {
 .cta:active .cta__icon { transform: scale(0.95); }
 .cta__icon svg { width: 1em; height: 1em; }
 
-.cta--ghost {
-  background: transparent;
-  border: 1px solid var(--line);
-  box-shadow: none;
-  color: var(--ink-muted);
-}
-
-.cta--ghost .cta__icon { background: rgba(169, 120, 31, 0.14); }
-
-.cta--ghost:hover {
-  color: var(--ink);
-  border-color: var(--gold);
-  box-shadow: none;
-}
-
 /* violin-string divider */
 .strings {
   position: absolute;
@@ -414,6 +399,7 @@ footer .paw { color: var(--gold); }
   bottom: clamp(3.5rem, 8vw, 6rem);
   width: clamp(88px, 12vw, 148px);
   z-index: 1;
+  filter: drop-shadow(0 6px 14px rgba(58, 36, 31, 0.22));
 }
 
 .cat-widget__glow {
@@ -532,7 +518,7 @@ footer .paw { color: var(--gold); }
   max-height: min(480px, 70vh);
   display: flex;
   flex-direction: column;
-  background: var(--bg-panel);
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 12px;
   box-shadow: 0 20px 50px -20px rgba(58, 36, 31, 0.35);
